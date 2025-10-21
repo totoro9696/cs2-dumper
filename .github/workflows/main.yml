@@ -1,0 +1,67 @@
+# 工作流的名称，会显示在 GitHub Actions 页面
+name: Build Rust Project
+
+# 定义触发工作流的事件
+on:
+  # 当有代码推送到 main 分支时触发
+  push:
+    branches: [ "main", "master" ]
+  # 当有针对 main 分支的 Pull Request 时触发
+  pull_request:
+    branches: [ "main", "master" ]
+
+# 定义环境变量，方便后续步骤使用
+env:
+  # 指定 Cargo 的根目录，用于缓存
+  CARGO_TERM_COLOR: always
+  # 二进制文件的名称，与 Cargo.toml 中的 'name' 字段保持一致
+  BINARY_NAME: cs2-dumper
+
+# 工作流中运行的所有作业
+jobs:
+  # 定义一个名为 'build' 的作业
+  build:
+    # 作业的名称，会显示在 GitHub UI 中
+    name: Build on Windows
+
+    # 指定作业运行的环境。必须是 windows-latest，因为你的项目有 Windows 特定依赖
+    runs-on: windows-latest
+
+    # 作业中执行的一系列步骤
+    steps:
+      # 第一步：检出代码
+      # 使用官方的 checkout action 来获取你的仓库代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 第二步：安装 Rust 工具链
+      # 使用 dtolnay/rust-toolchain action，它可以方便地安装指定版本的 Rust
+      # 'stable' 表示使用最新的稳定版
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      # 第三步：设置 Cargo 缓存
+      # 使用 Swatinem/rust-cache action 来缓存依赖项和构建输出
+      # 这可以极大地加快后续构建的速度
+      - name: Cache Cargo dependencies
+        uses: Swatinem/rust-cache@v2
+
+      # 第四步：构建项目
+      # 运行 'cargo build' 命令
+      # --release 参数表示构建优化后的发行版本
+      # --verbose 参数可以输出更详细的构建日志，方便排查问题
+      - name: Build binary
+        run: cargo build --release --verbose
+
+      # 第五步：上传构建产物
+      # 使用官方的 upload-artifact action
+      # 构建完成后，将生成的二进制文件（.exe）作为产物上传
+      # 这样你就可以在 Actions 页面下载它了
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          # 产物的名称，可以自定义
+          name: ${{ env.BINARY_NAME }}-windows
+          # 要上传的文件的路径
+          # 在 Windows 上，release 版本的二进制文件路径是 target/release/xxx.exe
+          path: target/release/${{ env.BINARY_NAME }}.exe
