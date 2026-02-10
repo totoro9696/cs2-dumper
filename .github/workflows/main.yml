@@ -38,7 +38,7 @@ jobs:
       # 使用 dtolnay/rust-toolchain action，它可以方便地安装指定版本的 Rust
       # 'stable' 表示使用最新的稳定版
       - name: Install Rust toolchain
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@nightly
 
       # 第三步：设置 Cargo 缓存
       # 使用 Swatinem/rust-cache action 来缓存依赖项和构建输出
