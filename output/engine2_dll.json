@@ -49,7 +49,12 @@
           "m_pPrevByClass": 96,
           "m_worldGroupId": 56
         },
-        "metadata": [],
+        "metadata": [
+          {
+            "name": "MGetKV3ClassDefaults",
+            "type": "Unknown"
+          }
+        ],
         "parent": null
       },
       "CEntityInstance": {
@@ -77,8 +82,13 @@
         "fields": {
           "m_scriptClassName": 48
         },
-        "metadata": [],
-        "parent": "CEntityComponent"
+        "metadata": [
+          {
+            "name": "MGetKV3ClassDefaults",
+            "type": "Unknown"
+          }
+        ],
+        "parent": null
       },
       "CVariantDefaultAllocator": {
         "fields": {},
@@ -99,7 +109,7 @@
         "fields": {
           "m_nFlags": 36,
           "m_nRuntimeIndex": 32,
-          "m_pBaseClassComponentHelper": 96,
+          "m_pBaseClassComponentHelper": 88,
           "m_pCPPClassname": 8,
           "m_pName": 0,
           "m_pNetworkDataReferencedDescription": 16,
@@ -108,20 +118,16 @@
         "metadata": [],
         "parent": null
       },
-      "EntInput_t": {
-        "fields": {},
-        "metadata": [],
-        "parent": null
-      },
       "EntityIOQueuePrioritizedEvent_t": {
         "fields": {
+          "m_PulseArguments": 64,
           "m_flFireTime": 4,
           "m_hActivator": 32,
           "m_hCaller": 36,
-          "m_hEntTarget": 44,
-          "m_nOutputID": 40,
+          "m_hEntTarget": 40,
           "m_pTarget": 16,
           "m_pTargetInput": 24,
+          "m_paramMap": 208,
           "m_targetType": 8,
           "m_variantValue": 48
         },
@@ -147,6 +153,18 @@
         "fields": {
           "m_nDummy0": 0
         },
+        "metadata": [],
+        "parent": null
+      },
+      "EventBugBugComplete_t": {
+        "fields": {
+          "m_pPayload": 0
+        },
+        "metadata": [],
+        "parent": null
+      },
+      "EventBugBug_t": {
+        "fields": {},
         "metadata": [],
         "parent": null
       },
@@ -196,7 +214,8 @@
       },
       "EventClientPollNetworking_t": {
         "fields": {
-          "m_nTickCount": 0
+          "m_nTickCount": 0,
+          "m_nTotalTicks": 4
         },
         "metadata": [],
         "parent": null

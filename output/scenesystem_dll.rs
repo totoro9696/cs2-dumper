@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2026-04-22 02:40:55.168485600 UTC
+// 2026-11-19 17:25:11.274421400 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
@@ -7,8 +7,32 @@ pub mod cs2_dumper {
     pub mod schemas {
         // Module: scenesystem.dll
         // Class count: 9
-        // Enum count: 5
+        // Enum count: 7
         pub mod scenesystem_dll {
+            // Alignment: 4
+            // Member count: 3
+            #[repr(u32)]
+            pub enum ESceneObjectMeshletVisualization {
+                SCENEOBJECT_MESHLET_VIS_NONE = 0x0,
+                SCENEOBJECT_MESHLET_VIS_MESHLET = 0x1,
+                SCENEOBJECT_MESHLET_VIS_CULLED = 0x2
+            }
+            // Alignment: 4
+            // Member count: 11
+            #[repr(u32)]
+            pub enum SceneStatsSections_t {
+                SCENE_STATS_NONE = 0x0,
+                SCENE_STATS_FRAME = 0x1,
+                SCENE_STATS_GEOMETRY = 0x2,
+                SCENE_STATS_CULLING = 0x4,
+                SCENE_STATS_MATERIALS = 0x8,
+                SCENE_STATS_LIGHTING = 0x10,
+                SCENE_STATS_RAYTRACING = 0x20,
+                SCENE_STATS_INTERNALS = 0x40,
+                SCENE_STATS_RENDERDEVICE = 0x80,
+                SCENE_STATS_ALL = 0xFF,
+                SCENE_STATS_DEFAULT = 0x7F
+            }
             // Alignment: 4
             // Member count: 7
             #[repr(u32)]

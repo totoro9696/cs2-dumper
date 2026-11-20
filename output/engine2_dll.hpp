@@ -1,5 +1,5 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2026-04-22 02:40:55.168485600 UTC
+// 2026-11-19 17:25:11.274421400 UTC
 
 #pragma once
 
@@ -9,7 +9,7 @@
 namespace cs2_dumper {
     namespace schemas {
         // Module: engine2.dll
-        // Class count: 56
+        // Class count: 57
         // Enum count: 2
         namespace engine2_dll {
             // Alignment: 4
@@ -38,13 +38,19 @@ namespace cs2_dumper {
             // Field count: 0
             namespace CEntityComponent {
             }
-            // Parent: CEntityComponent
+            // Parent: None
             // Field count: 1
+            //
+            // Metadata:
+            // MGetKV3ClassDefaults
             namespace CScriptComponent {
                 constexpr std::ptrdiff_t m_scriptClassName = 0x30; // CUtlSymbolLarge
             }
             // Parent: None
             // Field count: 12
+            //
+            // Metadata:
+            // MGetKV3ClassDefaults
             namespace CEntityIdentity {
                 constexpr std::ptrdiff_t m_nameStringTableIndex = 0x14; // int32
                 constexpr std::ptrdiff_t m_name = 0x18; // CUtlSymbolLarge
@@ -119,7 +125,7 @@ namespace cs2_dumper {
             namespace EventServerBeginSimulate_t {
             }
             // Parent: None
-            // Field count: 9
+            // Field count: 10
             //
             // Metadata:
             // MGetKV3ClassDefaults
@@ -130,9 +136,10 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_pTargetInput = 0x18; // CUtlSymbolLarge
                 constexpr std::ptrdiff_t m_hActivator = 0x20; // CEntityHandle
                 constexpr std::ptrdiff_t m_hCaller = 0x24; // CEntityHandle
-                constexpr std::ptrdiff_t m_nOutputID = 0x28; // int32
-                constexpr std::ptrdiff_t m_hEntTarget = 0x2C; // CEntityHandle
+                constexpr std::ptrdiff_t m_hEntTarget = 0x28; // CEntityHandle
                 constexpr std::ptrdiff_t m_variantValue = 0x30; // CVariantBase<CVariantDefaultAllocator>
+                constexpr std::ptrdiff_t m_PulseArguments = 0x40; // CPulseArgumentPack
+                constexpr std::ptrdiff_t m_paramMap = 0xD0; // CPulseInputParamMap
             }
             // Parent: None
             // Field count: 0
@@ -141,10 +148,6 @@ namespace cs2_dumper {
             // Parent: None
             // Field count: 0
             namespace EventClientAdvanceTick_t {
-            }
-            // Parent: None
-            // Field count: 0
-            namespace EntInput_t {
             }
             // Parent: None
             // Field count: 1
@@ -228,8 +231,8 @@ namespace cs2_dumper {
             // Parent: None
             // Field count: 2
             namespace CEntityAttributeTable {
-                constexpr std::ptrdiff_t m_Attributes = 0x0; // CUtlOrderedMap<CUtlStringToken,Attribute_t>
-                constexpr std::ptrdiff_t m_Names = 0x28; // CUtlOrderedMap<CUtlStringToken,CUtlString>
+                constexpr std::ptrdiff_t m_Attributes = 0x0; // CUtlOrderedMap<CUtlStringTokenNoRegistration,Attribute_t>
+                constexpr std::ptrdiff_t m_Names = 0x28; // CUtlOrderedMap<CUtlStringTokenNoRegistration,CUtlString>
             }
             // Parent: None
             // Field count: 0
@@ -253,7 +256,16 @@ namespace cs2_dumper {
             }
             // Parent: None
             // Field count: 0
+            namespace EventBugBug_t {
+            }
+            // Parent: None
+            // Field count: 0
             namespace CVariantDefaultAllocator {
+            }
+            // Parent: None
+            // Field count: 1
+            namespace EventBugBugComplete_t {
+                constexpr std::ptrdiff_t m_pPayload = 0x0; // EventBugBug_t*
             }
             // Parent: None
             // Field count: 0
@@ -325,7 +337,7 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_pNetworkDataReferencedPtrPropDescription = 0x18; // char*
                 constexpr std::ptrdiff_t m_nRuntimeIndex = 0x20; // int32
                 constexpr std::ptrdiff_t m_nFlags = 0x24; // uint32
-                constexpr std::ptrdiff_t m_pBaseClassComponentHelper = 0x60; // CEntityComponentHelper*
+                constexpr std::ptrdiff_t m_pBaseClassComponentHelper = 0x58; // CEntityComponentHelper*
             }
             // Parent: None
             // Field count: 4
@@ -336,9 +348,10 @@ namespace cs2_dumper {
                 constexpr std::ptrdiff_t m_nRenderHeight = 0x24; // int32
             }
             // Parent: None
-            // Field count: 1
+            // Field count: 2
             namespace EventClientPollNetworking_t {
                 constexpr std::ptrdiff_t m_nTickCount = 0x0; // int32
+                constexpr std::ptrdiff_t m_nTotalTicks = 0x4; // int32
             }
             // Parent: None
             // Field count: 1

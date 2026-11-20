@@ -1,12 +1,12 @@
 // Generated using https://github.com/a2x/cs2-dumper
-// 2026-04-22 02:40:55.168485600 UTC
+// 2026-11-19 17:25:11.274421400 UTC
 
 #![allow(non_upper_case_globals, non_camel_case_types, non_snake_case, unused)]
 
 pub mod cs2_dumper {
     pub mod schemas {
         // Module: engine2.dll
-        // Class count: 56
+        // Class count: 57
         // Enum count: 2
         pub mod engine2_dll {
             // Alignment: 4
@@ -37,13 +37,19 @@ pub mod cs2_dumper {
             // Field count: 0
             pub mod CEntityComponent {
             }
-            // Parent: CEntityComponent
+            // Parent: None
             // Field count: 1
+            //
+            // Metadata:
+            // MGetKV3ClassDefaults
             pub mod CScriptComponent {
                 pub const m_scriptClassName: usize = 0x30; // CUtlSymbolLarge
             }
             // Parent: None
             // Field count: 12
+            //
+            // Metadata:
+            // MGetKV3ClassDefaults
             pub mod CEntityIdentity {
                 pub const m_nameStringTableIndex: usize = 0x14; // int32
                 pub const m_name: usize = 0x18; // CUtlSymbolLarge
@@ -118,7 +124,7 @@ pub mod cs2_dumper {
             pub mod EventServerBeginSimulate_t {
             }
             // Parent: None
-            // Field count: 9
+            // Field count: 10
             //
             // Metadata:
             // MGetKV3ClassDefaults
@@ -129,9 +135,10 @@ pub mod cs2_dumper {
                 pub const m_pTargetInput: usize = 0x18; // CUtlSymbolLarge
                 pub const m_hActivator: usize = 0x20; // CEntityHandle
                 pub const m_hCaller: usize = 0x24; // CEntityHandle
-                pub const m_nOutputID: usize = 0x28; // int32
-                pub const m_hEntTarget: usize = 0x2C; // CEntityHandle
+                pub const m_hEntTarget: usize = 0x28; // CEntityHandle
                 pub const m_variantValue: usize = 0x30; // CVariantBase<CVariantDefaultAllocator>
+                pub const m_PulseArguments: usize = 0x40; // CPulseArgumentPack
+                pub const m_paramMap: usize = 0xD0; // CPulseInputParamMap
             }
             // Parent: None
             // Field count: 0
@@ -140,10 +147,6 @@ pub mod cs2_dumper {
             // Parent: None
             // Field count: 0
             pub mod EventClientAdvanceTick_t {
-            }
-            // Parent: None
-            // Field count: 0
-            pub mod EntInput_t {
             }
             // Parent: None
             // Field count: 1
@@ -227,8 +230,8 @@ pub mod cs2_dumper {
             // Parent: None
             // Field count: 2
             pub mod CEntityAttributeTable {
-                pub const m_Attributes: usize = 0x0; // CUtlOrderedMap<CUtlStringToken,Attribute_t>
-                pub const m_Names: usize = 0x28; // CUtlOrderedMap<CUtlStringToken,CUtlString>
+                pub const m_Attributes: usize = 0x0; // CUtlOrderedMap<CUtlStringTokenNoRegistration,Attribute_t>
+                pub const m_Names: usize = 0x28; // CUtlOrderedMap<CUtlStringTokenNoRegistration,CUtlString>
             }
             // Parent: None
             // Field count: 0
@@ -252,7 +255,16 @@ pub mod cs2_dumper {
             }
             // Parent: None
             // Field count: 0
+            pub mod EventBugBug_t {
+            }
+            // Parent: None
+            // Field count: 0
             pub mod CVariantDefaultAllocator {
+            }
+            // Parent: None
+            // Field count: 1
+            pub mod EventBugBugComplete_t {
+                pub const m_pPayload: usize = 0x0; // EventBugBug_t*
             }
             // Parent: None
             // Field count: 0
@@ -324,7 +336,7 @@ pub mod cs2_dumper {
                 pub const m_pNetworkDataReferencedPtrPropDescription: usize = 0x18; // char*
                 pub const m_nRuntimeIndex: usize = 0x20; // int32
                 pub const m_nFlags: usize = 0x24; // uint32
-                pub const m_pBaseClassComponentHelper: usize = 0x60; // CEntityComponentHelper*
+                pub const m_pBaseClassComponentHelper: usize = 0x58; // CEntityComponentHelper*
             }
             // Parent: None
             // Field count: 4
@@ -335,9 +347,10 @@ pub mod cs2_dumper {
                 pub const m_nRenderHeight: usize = 0x24; // int32
             }
             // Parent: None
-            // Field count: 1
+            // Field count: 2
             pub mod EventClientPollNetworking_t {
                 pub const m_nTickCount: usize = 0x0; // int32
+                pub const m_nTotalTicks: usize = 0x4; // int32
             }
             // Parent: None
             // Field count: 1
